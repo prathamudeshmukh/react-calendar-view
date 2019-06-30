@@ -3,12 +3,22 @@ import Header from "./Header";
 import MonthView from "./MonthView";
 import moment from "moment";
 
-export default class Calendar extends React.PureComponent {
+export default class Calendar extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            currentMonth : moment().startOf('month')
+        };
+        this.onHeaderChange = this.onHeaderChange.bind(this);
+    }
+    onHeaderChange(currentMonth) {
+        this.setState( { currentMonth: moment(currentMonth).startOf('month') } );
+    }
+
     render() {
-        const monthStart = moment().startOf('month');
         return <div>
-            <Header currentMonth={monthStart}/>
-            <MonthView currentMonth={monthStart}/>
+            <Header currentMonth={this.state.currentMonth} onHeaderChange={this.onHeaderChange}/>
+            <MonthView currentMonth={this.state.currentMonth}/>
         </div>;
     }
 }
