@@ -35,3 +35,24 @@ body {
     align-items: center;
     align-content: stretch;
 }
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+}
+
+.headerMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex: 6;
+}
+
+.headerExtra {
+    display: flex;
+    flex: 4;
+}

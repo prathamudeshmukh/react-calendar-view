@@ -7,7 +7,7 @@ export default class Calendar extends React.PureComponent {
     render() {
         const monthStart = moment().startOf('month');
         return <div>
-            <Header/>
+            <Header currentMonth={monthStart}/>
             <MonthView currentMonth={monthStart}/>
         </div>;
     }
