@@ -21,7 +21,7 @@ export default class MonthView extends React.PureComponent {
         for (; startOfWeekClone.isSameOrBefore(endOfWeek); startOfWeekClone.add(1, 'days')) {
             days.push(<Day>{startOfWeekClone.date()}</Day>);
         }
-        return <div className={"week"}>
+        return <div className={"columns is-variable is-1"}>
             {days}
         </div>
     }
